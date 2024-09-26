@@ -1,0 +1,95 @@
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    float A, B, C, X, Y, R;
+    cout<<"A = "; cin>>A;
+    cout<<"B = "; cin>>B;
+    cout<<"C = "; cin>>C;
+    cout<<"X = "; cin>>X;
+    cout<<"Y = "; cin>>Y;
+    if(A>B)
+    {
+        R=A;
+        A=B;
+        B=R;
+    }
+    else
+    {
+        if(R=A, A=B, B=R)
+        {
+            B>C;
+        }
+        else
+        {
+            if(B>C)
+            {
+                R=B;
+                B=C; 
+                C=R;
+            }
+            else
+            {
+                if(R=B, B=C, C=R)
+                {
+                    A>B;
+                }
+                else
+                {
+                    if(A>B)
+                    {
+                        R=A;
+                        A=B;
+                        B=R;
+                    }
+                    else
+                    {
+                        if(R=A, A=B, B=R)
+                        {
+                            X>Y;
+                        }
+                        else
+                        {
+                            if(X>Y)
+                            {
+                                R=X;
+                                X=Y;
+                                Y=R;
+                            }
+                            else
+                            {
+                                if(R=X, X=Y, Y=R)
+                                {
+                                    A<X;
+                                    B<Y;
+                                }
+                                else
+                                {
+                                    if(A<X && B<Y)
+                                    {
+                                        cout<<"Пройдет";
+                                    }
+                                    else
+                                    {
+                                        cout<<"Не пройдет";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+     if(A<X && B<Y)
+    {
+        cout<<"Пройдет";
+    }
+    else
+    {
+        cout<<"Не пройдет";
+    }
+    return 0;
+}
