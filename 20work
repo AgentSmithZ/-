@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int number;
+	cout<<"Введите двузначное число (01 до 99)"; cin>>number;
+	cout<<number;
+	
+	if(number < 10 || number > 99)
+	{
+		cout<<"\nЧисло должно быть двузначным!";
+		return 1;
+	}
+	int first = number / 10;
+	int two = number % 10;
+	int swap = two * 10 * first;
+	int sum = first + two;
+	int division = (swap + sum) / 100;
+	
+	if(division == 00)
+	{
+		cout<<"\nЧисло 0";
+	}
+	else
+	{
+		cout<<"\nГотово";
+	}
+	
+	return 0;
+}
