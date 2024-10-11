@@ -2,8 +2,8 @@
 #include <math.h>
 using namespace std;
 
-//Функция проверки символа
-void checkInSystem(char ch)
+//Процедура проверки символа
+void checkInSystem(char ch) //Входное значение ch
 {
 	cout<<"Символ " << ch << " может быть цифрой в системах счисления: ";
 	
