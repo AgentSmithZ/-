@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block container %}
+<div class="container-issue">
+<h2>Request</h2>
+<form>
+    <div class="mb-3">
+      <label for="name" class="form-label">Your name</label>
+      <input type="name" class="form-control" id="name" aria-describedby="nameHelp">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+    <div class="mb-3">
+      <label for="issue" class="form-label" id="issue">Issue</label>
+      <textarea class="form-control" id="issue" rows="3"></textarea>
+    </div>
+    <div>
+    <select class="form-select container-priority" aria-label="Default select example">
+        <option selected>Select one priority</option>
+        <option value="1">Low</option>
+        <option value="2">Medium</option>
+        <option value="3">High</option>
+      </select>
+    </div>
+    <center>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </center>
+  </form>
+</div>
+{% endblock %}

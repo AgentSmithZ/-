@@ -13,7 +13,7 @@ def request():
 
 @app.route('/auth')
 def auth():
-    return render_template
+    return render_template('auth.html')
 
 if __name__ == '__main__':
     app.run()
