@@ -1,0 +1,43 @@
+<title>Заявка</title>
+{% extends 'main.html' %}
+{% block container %}
+<header>
+    <div class='container-nav'>
+        <nav class="navbar bg-body-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="main">
+                <img src="static/zerotwoglass.gif" alt="Logo" width="50" height="42" class="d-inline-block align-text-top">
+            </a>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-danger">Авторизация</button>
+            </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <hr class="hr-nav">
+    <div class="container-mt-5">
+        <a href="main" class="btn btn-dark">
+            <img src="static/dns.png" width="30" height="35">
+        </a>
+        <span>Главная</span>
+      </div>
+    <div class="container-mt-5">
+        <a href="request" class="btn btn-dark">
+            <img src="static/support.png" width="30" height="35">
+        </a>
+        <span>Поддержка</span>
+      </div>
+    <div class="container-mt-5">
+        <a href="requests" class="btn btn-dark">
+          <img src="static/ticket.png" width="30" height="35">
+        </a>
+        <span>Тикет</span>
+      </div>
+<main>
+    <div class="container-mt-4">
+
+    </div>
+</main>
+{% endblock %}
