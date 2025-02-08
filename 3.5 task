@@ -1,0 +1,50 @@
+#include <iostream>
+
+class Square {
+private:
+    int side;
+
+public:
+    Square(int side) : side(side) {}
+
+    int getSide() const {
+        return side;
+    }
+};
+
+class Rectangle {
+private:
+    int width;
+    int length;
+
+public:
+    Rectangle(int width, int length) : width(width), length(length) {}
+
+    int getWidth() const {
+        return width;
+    }
+
+    int getLength() const {
+        return length;
+    }
+};
+
+class Cut {
+public:
+    int cutSquares(const Rectangle& rect, const Square& square) {
+        int squaresInWidth = rect.getWidth() / square.getSide();
+        int squaresInLength = rect.getLength() / square.getSide();
+        return squaresInWidth * squaresInLength;
+    }
+};
+
+int main() {
+    Rectangle rect(130, 543);
+    Square square(130);
+    Cut cutter;
+
+    int totalSquares = cutter.cutSquares(rect, square);
+    std::cout << "От прямоугольника можно отрезать " << totalSquares << " квадратов со стороной " << square.getSide() << " мм." << std::endl;
+
+    return 0;
+}
