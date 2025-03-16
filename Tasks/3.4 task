@@ -1,0 +1,40 @@
+#include <iostream>
+
+class AppleStudent {
+private:
+    float Student;
+    float Apples;
+
+public:
+    AppleStudent(float students, float appled) : Student(students), Apples(appled) {}
+    
+    void districtApples() {
+        if (Student <= 0) {
+            std::cout << "Количество школьников должно быть больше нуля..." << std::endl;
+            return;
+        }
+        if (Apples < 0) {
+            std::cout << "Количество яблок не может быть отрицательным." << std::endl;
+            return;
+        }
+        
+        int applesOrStudent = (Apples / Student);
+        float remainApples = Apples - (applesOrStudent * Student);
+        
+        std::cout << "Каждый школьник получил: " << applesOrStudent << " целых яблок." << std::endl;
+        std::cout << "Осталось яблок: " << remainApples << std::endl;
+    }
+};
+
+int main() {
+    float Student, Apples;
+    
+    std::cout << "Сколько школьников? ";
+    std::cin >> Student;
+    
+    std::cout << "Сколько яблок? ";
+    std::cin >> Apples;
+    
+    AppleStudent distributor(Student, Apples);
+    distributor.districtApples();
+}
