@@ -1,0 +1,31 @@
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int n = 5, i, sum = 0, timeMas = 0;
+    int mas[n];
+    int res = 0;
+    for(i=0; i<n; i++)
+    {
+        cout<< "Введите значение " << i+1 << " элемента: ";
+        cin >> timeMas;
+        while(timeMas < 0 || timeMas > 9)
+        {
+            cout << "\nВведите число от 1 до 9: ";
+            cin >> timeMas;
+        }
+        mas[i] = timeMas;
+    }
+    for(i=0; i<n; i++)
+    {
+        sum = sum + mas[i];
+    }
+    for(i=0; i<n; i++)
+    {
+        cout << mas[i] << "\n";
+    }
+    cout<< "\nОтвет: " << sum;
+    return 0;
+}

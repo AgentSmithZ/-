@@ -1,0 +1,46 @@
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x, y;
+    cout<< "X равен: "; cin>>x;
+    if(-10<=x && x < 0)
+    {
+        y=-x/2-3;
+        cout<<y;
+    }
+    else
+    {
+        if(0<x && x<=3)
+        {
+            y=-sqrt(3*3 - x*x);
+            cout<<y;
+        }
+        else
+        {
+            if(3<x && x<=6)
+            {
+                y=sqrt(3*3 - (x-3));
+                cout<<y;
+            }
+            else
+            {
+                if(6<x && x<8)
+                {
+                    y=0;
+                    cout<<y;
+                }
+                else
+                {
+                    if(x<-10 || x>8)
+                    {
+                    cout<<"Функция не определенна";
+                    }
+                }
+            }
+        }
+    }
+
+    return 0;
+}

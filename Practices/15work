@@ -1,0 +1,27 @@
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    float a, c;
+    cout<<"Введите a: ";
+    cin>>a;
+    if(a=0)
+    {
+        cout<<"oy man";
+    }
+    else
+    {
+        c=3/a;
+        if(a>0)
+        {
+            cout<<"x < c";
+        }
+        else
+        {
+            cout<<"x > c";
+        }
+    }
+    return 0;
+}

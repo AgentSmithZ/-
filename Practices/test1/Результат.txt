@@ -1,0 +1,3 @@
+jump.txt      jump jump
+res.txt      1      1
+zona.txt      zon zon

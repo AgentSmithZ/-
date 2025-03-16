@@ -1,0 +1,26 @@
+#include<math.h>
+#include<iostream>
+
+using namespace std;
+
+int main() 
+{
+    float a, b, c = 0;
+    cout<< "Введите a: "; cin>>a;
+    cout<< "Введите b: "; cin>>b;
+    if (a>0 || b>0)
+    {
+        a = 2*a+b;
+        b = b;
+    }
+    else
+    {
+        a = abs(a);
+        b = abs(b);
+    }     
+    c = a+b;
+    cout<<"\n А равно "; cout<<a;
+    cout<<"\n B равно "; cout<<b;
+    cout<<"\n C равно "; cout<<c;
+return 0;
+}

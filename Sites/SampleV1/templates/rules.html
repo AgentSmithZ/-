@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+{% block container %}
+<div class="container-fixed-width">
+    <div class="row">
+        <div class="col-4">
+          <div id="list-example" class="list-group">
+            <a class="list-group-item list-group-item-action text-bg-dark p-3" href="#list-item-1">1. Общее положение</a>
+            <a class="list-group-item list-group-item-action text-bg-dark p-3" href="#list-item-2">2. Правила сервера</a>
+          </div>
+        </div>
+        <div class="col-8">
+          <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <h4 id="list-item-1" class="text-white">1. Общее положение</h4>
+            <p class="text-white"><span class="text-primary">1.1</span> Незнание правил не освобождает вас от ответственности.шучу</p>
+            <p class="text-white"><span class="text-primary">1.2</span> Зайдя на один из серверов вы автоматически соглашаетесь.</p>
+            <p class="text-white"><span class="text-primary">1.3</span> Запрещено продавать услуги серверов.</p>
+            <p class="text-white"><span class="text-primary">1.4</span> </p>
+            <h4 id="list-item-2" class="text-white">2. Правила сервера</h4>
+            <p class="text-white"><span class="text-primary">2.1</span> Запрещен спам в тестовый чат, флуд в голосовой чат</p>
+            <p class="text-white"><span class="text-warning">Пример: спамить в чат, писать КАПСОМ более 5 сообщений, играть с неисправным микрофоном и тд.</span></p>
+            <p class="text-white"><span class="text-danger">Наказание: Предупреждение, далее мут на 3 часа.</span></p>
+            <p class="text-white"><span class="text-primary">2.2</span> Запрещена любая клевета, дезинформация или ложь про игроков, администрацию и сервер.</p>
+            <p class="text-white"><span class="text-danger">Наказание: Предупреждение, далее мут на 2 часа.</span></p>
+            <p class="text-white"><span class="text-primary">2.3</span> Запрещено выдавать себя за администратора, модератора, если Вы на самом деле им не являетесь.</p>
+            <p class="text-white"><span class="text-danger">Наказание: Предупреждение, далее мут на 3 часа.</span></p>
+            <p class="text-white"><span class="text-primary">2.4</span> Запрещено использовать программы для изменения голоса и программы для включения музыки.</p>
+            <p class="text-white"><span class="text-warning">Пример: SoundPad, Voicemod и подобные программы.</span></p>
+            <p class="text-white"><span class="text-danger">Наказание: Предупреждение, далее мут на 3 часа.</span></p>
+            <p class="text-white"><span class="text-primary">2.5</span> Запрещены оскорбления других игроков. (Оскорбления по типу "Какашка", "Дурачок" и т.д, сказанные не в негативном ключе, не являются нарушением.)</p>
+            <p class="text-white"><span class="text-danger">Наказание: Мут на 3 часа.</p>
+            <p class="text-white"><span class="text-primary">2.6</span> Запрещено неадекватное поведение, злоупотребление матом.</p>
+            <p class="text-white"><span class="text-danger">Наказание: Предупреждение, далее мут на 2 часа.</span></p>
+            <p class="text-white"><span class="text-primary">2.7</span> Запрещено провоцировать игроков на конфликты, подстрекать на нарушение правил.</p>
+            <p class="text-white"><span class="text-danger">Наказание: Предупреждение, далее мут на 3 часа.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

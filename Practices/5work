@@ -1,0 +1,46 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float per(float e, float r, float t)
+{
+    float res, yes;
+    res = (e + r + t)/2;
+    yes = sqrt(abs(res*(res-e)*(res-r)*(res-t)));
+    return yes;
+}
+/*float ker(float w, float e, float r, float t)
+{
+    float yes;
+    yes = sqrt(abs(w*(w-e)*(w-r)*(w-t)));
+    return yes;
+}*/
+void Vivod(float s)
+{
+    if(s > 15)
+    cout<< "\nПлощадь треугольника больше 15 ";
+    else
+    cout<< "\nПлощадь треугольника меньше 15 ";
+    cout<< "\nПлощадь треугольника = " << s;
+    cout<< "\nПока пока";
+}
+void tmp(float x, float y)
+{
+    float time;
+    time = x;
+    x = y;
+    y = time;
+}
+int main()
+{
+    float a, b, c, p, s;
+    cout<< "\nПиривет!";
+    cout<< "\na="; cin>>a;
+    cout<< "\nb="; cin>>b;
+    cout<< "\nc="; cin>>c;
+    //p=per(a, b, c);
+    s=per(a, b, c);
+    Vivod(s);
+    tmp(a,b);
+    return 0;
+}

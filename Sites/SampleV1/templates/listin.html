@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+{% block container %}
+<div class="listfor">
+        <ul>
+            {% for user in score %}
+                <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}

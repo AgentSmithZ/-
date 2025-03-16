@@ -1,0 +1,24 @@
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int a;
+    int b;
+    cout<< "\nВведите b: "; cin>>b;
+    cout<< "\nВведите a: "; cin>>a;
+    while(a != b)
+    {
+        if(a > b)
+        {
+            b = b - a;
+        }
+        else
+        {
+            a = a - b;
+        }
+    }
+    cout<<"\nb = "; cout<<b; cout<< ", a = "; cout<<a;
+    return 0;
+}
