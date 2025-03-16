@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main() {
+    float x;
+    float week;
+    std::cout << "Сколько дней в неделях?";
+    std::cin >> x;
+    week = x / 7;
+    std::cout << week << "Столько недель...";
+
+    return 0;
+}
