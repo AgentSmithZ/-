@@ -1,67 +1,94 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <numeric>
-#include <limits>
 
 using namespace std;
 
 struct Employee {
-    string fullName;
-    struct BirthDate {
-        int day, month, year;
-    };
-    BirthDate birthDate;
-    int experienceYears;
-    double salary;
+    char name[50];               
+    int birthday_day, birthday_month, birthday_year; 
+    int years_experience;        
+    double salary;              
 };
 
-auto compareByBirthDate = [](const Employee& a, const Employee& b) {
-    return a.birthDate.year < b.birthDate.year ||
-           (a.birthDate.year == b.birthDate.year && a.birthDate.month < b.birthDate.month) ||
-           (a.birthDate.year == b.birthDate.year && a.birthDate.month == b.birthDate.month &&
-            a.birthDate.day < b.birthDate.day);
-};
+bool isBirthdayEarlier(Employee employee1, Employee employee2) {
+    if(employee1.birthday_year != employee2.birthday_year)
+        return employee1.birthday_year < employee2.birthday_year;
+    else if(employee1.birthday_month != employee2.birthday_month)
+        return employee1.birthday_month < employee2.birthday_month;
+    else
+        return employee1.birthday_day < employee2.birthday_day;
+}
+
+void bubbleSort(Employee employees[], int count) {
+    bool swapped;
+    do {
+        swapped = false;
+        for(int i = 0; i < count - 1; ++i) {
+            if (!isBirthdayEarlier(employees[i], employees[i + 1])) {
+                Employee temp = employees[i];
+                employees[i] = employees[i + 1];
+                employees[i + 1] = temp;
+                swapped = true;
+            }
+        }
+    } while(swapped);
+}
+
+void collectStats(Employee employees[], int count) {
+    int minExperience = employees[0].years_experience;
+    int maxExperience = employees[0].years_experience;
+    double totalSalary = 0.0;
+
+    for(int i = 0; i < count; ++i) {
+        if(employees[i].years_experience < minExperience)
+            minExperience = employees[i].years_experience;
+        if(employees[i].years_experience > maxExperience)
+            maxExperience = employees[i].years_experience;
+        totalSalary += employees[i].salary;
+    }
+
+    double avgSalary = totalSalary / count;
+
+    cout << "Минимальный стаж: " << minExperience << " лет\n"
+         << "Максимальный стаж: " << maxExperience << " лет\n"
+         << "Средняя зарплата: " << avgSalary << endl;
+}
 
 int main() {
-    int n;
+    int numEmployees;
     cout << "Введите количество сотрудников: ";
-    cin >> n;
+    cin >> numEmployees;
 
-    vector<Employee> employees(n);
+    Employee employees[numEmployees];
 
-    for(auto& e : employees) {
+    for(int i = 0; i < numEmployees; ++i) {
         cout << "ФИО: ";
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        getline(cin, e.fullName);                       
-        cout << "Дата рождения: ";
-        cin >> e.birthDate.day >> e.birthDate.month >> e.birthDate.year;
-        cout << "Стаж работы: ";
-        cin >> e.experienceYears;
-        cout << "Оклад: ";
-        cin >> e.salary;
+        cin >> employees[i].name;
+
+        cout << "Год рождения: ";
+        cin >> employees[i].birthday_year;
+        
+        cout << "Месяц рождения: ";
+        cin >> employees[i].birthday_month;
+        
+        cout << "День рождения: ";
+        cin >> employees[i].birthday_day;
+
+        cout << "Опыт работы: ";
+        cin >> employees[i].years_experience;
+
+        cout << "Зарплата: ";
+        cin >> employees[i].salary;
     }
 
-    sort(employees.begin(), employees.end(), compareByBirthDate);
+    bubbleSort(employees, numEmployees);
 
-    cout << "\nСортировка по дате рождения:" << endl;
-    for(const auto& e : employees) {
-        cout << e.fullName << ", " << e.birthDate.day << '.' << e.birthDate.month << '.' << e.birthDate.year << endl;
+    cout << "\nСортировка по дате рождения:\n";
+    for(int i = 0; i < numEmployees; ++i) {
+        cout << "ФИО: " << employees[i].name << ". Дата рождения: " << employees[i].birthday_day << '/'
+             << employees[i].birthday_month << '/' << employees[i].birthday_year << endl;
     }
 
-    auto [minExp, maxExp] = minmax_element(employees.begin(), employees.end(),
-                                           [](const Employee& a, const Employee& b){
-                                               return a.experienceYears < b.experienceYears;
-                                           });
-
-    cout << "\nМинимальный стаж: " << (*minExp).experienceYears << " лет" << endl;
-    cout << "Максимальный стаж: " << (*maxExp).experienceYears << " лет" << endl;
-
-    double avgSalary = accumulate(employees.begin(), employees.end(), 0.0,
-                                  [](double acc, const Employee& e){ return acc + e.salary; }) /
-                       employees.size();
-
-    cout << "Средний оклад по фирме: " << avgSalary << endl;
+    collectStats(employees, numEmployees);
 
     return 0;
 }
