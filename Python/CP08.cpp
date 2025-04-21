@@ -4,7 +4,9 @@ using namespace std;
 
 struct Employee {
     char name[50];               
-    int birthday_day, birthday_month, birthday_year; 
+    int birthday_day;
+    int birthday_month;
+    int birthday_year; 
     int years_experience;        
     double salary;              
 };
@@ -84,7 +86,7 @@ int main() {
 
     cout << "\nСортировка по дате рождения:\n";
     for(int i = 0; i < numEmployees; ++i) {
-        cout << "ФИО: " << employees[i].name << ". Дата рождения: " << employees[i].birthday_day << '/'
+        cout << "ФИО: " << employees[i].name << ". Дата рождения (День/Месяц/Год): " << employees[i].birthday_day << '/'
              << employees[i].birthday_month << '/' << employees[i].birthday_year << endl;
     }
 
