@@ -4,7 +4,7 @@ class calc:
     
     def calculate(self):
         ever = str(self.x)
-        return int(ever[:-2] + ever[2] + ever[1])
+        return ever[:-2] + ever[2] + ever[1]
 
 obj = calc(613)
 obj.calculate()
