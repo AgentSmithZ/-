@@ -4,8 +4,8 @@ class calc:
 
     def calculate(self):
         ever = str(self.x)
-        return int(ever[-1] + ever[:-1])
+        return ever[-1] + ever[:-1]
     
-calculator = calc(275)
-
-print(calculator.calculate())
+obj = calc(613)
+obj.calculate()
+print(obj.calculate())
