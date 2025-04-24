@@ -1,5 +1,4 @@
 class calc:
-
     def __init__(self, x):
         self.x = x
     
@@ -7,6 +6,6 @@ class calc:
         ever = str(self.x)
         return int(ever[:-2] + ever[2] + ever[1])
 
-calculator = calc(721)
-
-print(calculator.calculate())
+obj = calc(613)
+obj.calculate()
+print(obj.calculate())
