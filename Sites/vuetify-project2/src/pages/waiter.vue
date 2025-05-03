@@ -1,0 +1,4 @@
+<template>
+    <Header />
+    <NevWaiter />
+</template>
