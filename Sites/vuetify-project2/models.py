@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
     nickname TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL,
     role_id INTEGER NOT NULL,
+    is_active INTEGER NOT NULL DEFAULT 1,
     FOREIGN KEY(role_id) REFERENCES roles(id)
 )
 """)
@@ -34,6 +35,8 @@ CREATE TABLE IF NOT EXISTS orders (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     date_order TEXT NOT NULL,
     user_id INTEGER NOT NULL,
+    table_number INTEGER NOT NULL,
+    guest_count INTEGER NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users(id)
 )
 """)
@@ -76,11 +79,10 @@ cursor.execute("INSERT OR IGNORE INTO users (nickname, password, role_id) VALUES
 cursor.execute("INSERT OR IGNORE INTO users (nickname, password, role_id) VALUES ('waiter', '654321', 2)")
 cursor.execute("INSERT OR IGNORE INTO users (nickname, password, role_id) VALUES ('cook', '321456', 3)")
 
-cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Борщ', 'Горячее', '200')")
-cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Стейк', 'Горячее', '1700')")
-cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Окрошка', 'Холодное', '600')")
-cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Кола', 'Напитки', '100')")
-cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Чай с молоком', 'Напитки', '50')")
+cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Борщ', 'Еда', '200')")
+cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Стейк', 'Еда', '1700')")
+cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Кофе', 'Напитки', '100')")
+cursor.execute("INSERT OR IGNORE INTO menu (title, type, price) VALUES ('Пирожок', 'Еда', '50')")
 
 # Вставляем новые корректные заказы
 cursor.execute("INSERT OR IGNORE INTO orders (date_order) VALUES ('2025-04-29')")
