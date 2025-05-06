@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список заказов | Админ-панель</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--dark);
+        }
+        
+        .page-header {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .page-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0 !important;
+        }
+        
+        .table-responsive {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .table thead th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            font-weight: 500;
+        }
+        
+        .table tbody tr {
+            transition: background-color 0.2s;
+        }
+        
+        .table tbody tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+        
+        .table tbody td {
+            padding: 12px 15px;
+            vertical-align: middle;
+            border-top: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status-new {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--secondary);
+        }
+        
+        .status-preparing {
+            background-color: rgba(243, 156, 18, 0.1);
+            color: var(--warning);
+        }
+        
+        .status-ready {
+            background-color: rgba(39, 174, 96, 0.1);
+            color: var(--success);
+        }
+        
+        .status-completed {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--danger);
+        }
+        
+        .form-select {
+            border-radius: 6px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+        
+        .badge-count {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="page-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="page-title">
+                    <i class="fas fa-clipboard-list me-2"></i>Список заказов
+                    <span class="badge-count">{{ orders|length }}</span>
+                </h1>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>Все заказы</span>
+                    <div>
+                        <span class="badge bg-light text-dark">Обновлено: {{ current_time }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                {% if orders %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Стол №</th>
+                                <th>Клиенты</th>
+                                <th>Блюда</th>
+                                <th>Дата</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{ order.id }}</td>
+                                <td>{{ order.table_number }}</td>
+                                <td>{{ order.customer_count }}</td>
+                                <td>
+                                    {% for item in order.items.split(',') %}
+                                    <span class="badge bg-light text-dark mb-1">{{ item }}</span>
+                                    {% endfor %}
+                                </td>
+                                <td>{{ order.created_at }}</td>
+                                <td>
+                                    <span class="status-badge 
+                                        {% if order.status == 'Принят' %}status-new
+                                        {% elif order.status == 'Готовится' %}status-preparing
+                                        {% elif order.status == 'Готов' %}status-ready
+                                        {% else %}status-completed{% endif %}">
+                                        {{ order.status }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <form action="{{ url_for('update_order', order_id=order.id) }}" method="POST" class="d-flex">
+                                        <select name="status" class="form-select me-2" style="width: 120px;">
+                                            <option value="Принят" {% if order.status == 'Принят' %}selected{% endif %}>Принят</option>
+                                            <option value="Готовится" {% if order.status == 'Готовится' %}selected{% endif %}>Готовится</option>
+                                            <option value="Готов" {% if order.status == 'Готов' %}selected{% endif %}>Готов</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-sync-alt me-1"></i>Обновить
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="empty-state">
+                    <i class="fas fa-clipboard-list fa-3x mb-3"></i>
+                    <h4>Нет доступных заказов</h4>
+                    <p>Здесь будут отображаться все созданные заказы</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-back">
+        <i class="fas fa-arrow-left me-2"></i> Назад к панели
+    </a>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

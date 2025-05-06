@@ -1,0 +1,227 @@
+.button-style {
+    border: 1px solid #445ff7; /* Add a border */
+    padding: 0.5rem 1rem; /* Add some padding */
+    border-radius: 5px; /* Round the corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button-style:hover {
+    background-color: #527aff; /* Change background color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.btn-dark {
+    margin-top: 30px;
+}
+
+.btn-img {
+    background-image: url('static/rules.jfif'); /* Replace with your image path */
+    background-size: 20px 20px; /* Adjust size as needed */
+    background-repeat: no-repeat;
+    background-position: center left; /* Adjust position as needed */
+    padding-left: 30px; /* Add padding to make space for the image */
+}
+
+.container {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.container-fixed-width {
+    width: 1000px;
+    margin: 0 auto; /* Centers the container horizontally */
+    text-align: left;
+  }
+
+  .profile-card {
+    max-width: 650px;
+    margin: 50px auto; /* Center the card horizontally */
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add a subtle shadow */
+    overflow: hidden; /* Hide any overflowing content */
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: 1fr 2fr; /* 1 part image, 2 parts text */
+    grid-template-rows: auto 1fr; /* Adjust as needed */
+    gap: 20px; /* Spacing between sections */
+    padding: 40px;
+    align-items: center;
+    text-align: center;
+    background-color: #2b2b2b;
+  }
+  
+  .profile-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    grid-column: 1 / span 1;
+    justify-self: center;
+}
+  
+  .profile-card h2 {
+    margin-top: 0;
+    color: #343a40; /* Darker gray heading */
+  }
+  
+  .profile-card p {
+    color: #6c757d; /* Gray paragraph text */
+    line-height: 1.6;
+  }
+  
+  .profile-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .profile-card li {
+    margin-bottom: 10px;
+  }
+  
+  .profile-card a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+  }
+  
+  .profile-card a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .profile-card {
+      grid-template-columns: 1fr; /* Stack image and text vertically */
+    }
+  }
+
+  .cssH1 {
+    margin-top: 30px;
+    margin-left: 43%;
+  }
+
+  footer {
+    background-color: #00141F;
+    margin-top: 10px;
+    margin: 10px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+.container-fluid {
+    background-color: #00141F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+.container-loh {
+    margin-top: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    border-radius: 15px;
+}
+
+.container-hol {
+    background-color: #00141F;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+
+.wrap {
+    display: flex; /* Включаем Flexbox */
+    justify-content: flex-start; /* Элементы выравниваются по началу строки (по умолчанию) */
+  }
+
+.carousel-all {
+    background-color: #00141F;
+    margin-top: 15px;
+    margin-left: 250px;
+    margin-right: 10px;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item img {
+    border-radius: 30px;
+    height: 100%; /* Задайте желаемую высоту */
+    width: 100%;
+    object-fit: cover; /* Это свойство позволяет сохранить пропорции и обрезать изображение */
+}
+
+.holder-image {
+    border-radius: 30px;
+    min-width: 100px;
+    margin-top: 15px;
+    margin-right: 250px;
+    object-position: right;
+}
+
+.img-fluid {
+    border-radius: 30px;
+    object-position: right;
+}
+
+.custom-img {
+    width: 950px; /* Ширина изображения */
+    height: 150px; /* Высота изображения */
+    object-fit: cover; /* Обрезать изображение, чтобы оно не деформировалось */
+}
+
+.custom-img1 {
+    margin-top: 10px;
+    width: 300px; /* Ширина изображения */
+    height: 200px; /* Высота изображения */
+    object-fit: cover; /* Обрезать изображение, чтобы оно не деформировалось */
+}
+
+.imagefor {
+  text-align: center;
+  border-radius: 30px;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between; /* Разделяет элементы на левую и правую части */
+}
+
+.auth-btn {
+    border: 2px solid white; /* Белая граница */
+    color: #fff;
+    border-radius: 5px; /* Скругленные углы */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+}
+
+.auth-btn:hover {
+    background-color: rgb(4, 24, 139); /* Белый фон при наведении */
+    color: rgb(9, 49, 224); /* Черный текст при наведении */
+    border-color: #007bff; /* Цвет границы при наведении */
+}
+
+.text123 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.textfor{
+  margin-left: 250px;
+}
+
+.listfor{
+  margin-left: 250px;
+}
+
+.result {
+  margin-left: 270px;
+  margin-right: 250px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+}

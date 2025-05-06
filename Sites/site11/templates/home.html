@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }} world!</title>
+    {% else %}
+    <title>Hello world!</title>
+    {% endif %}
+    <style>
+      :root {
+          --primary: #6e00ff;
+          --primary-dark: #4a00b4;
+          --secondary: #00f0ff;
+          --dark: #0a0020;
+          --light: #f0f0ff;
+          --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      }
+      
+      body {
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: var(--dark);
+          color: var(--light);
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+      }
+      
+      /* Навигация */
+      .navbar {
+          background: rgba(10, 0, 32, 0.8);
+          backdrop-filter: blur(15px);
+          padding: 15px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+      }
+      
+      .navbar-brand {
+          font-weight: 800;
+          font-size: 1.8rem;
+          background: var(--gradient);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          text-decoration: none;
+      }
+      
+      .nav-button {
+          background: none;
+          border: none;
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--light);
+          padding: 8px 20px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border-radius: 50px;
+          text-decoration: none;
+          margin: 0 5px;
+      }
+      
+      .nav-button:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-2px);
+      }
+      
+      .signup-button {
+          background: var(--gradient);
+          color: white;
+          font-weight: 600;
+          box-shadow: 0 4px 15px rgba(110, 0, 255, 0.4);
+      }
+      
+      .signup-button:hover {
+          background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(110, 0, 255, 0.6);
+      }
+      
+      /* Карусель */
+      .carousel {
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          margin: 30px auto;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          max-width: 1200px;
+      }
+      
+      .carousel-item img {
+          height: 60vh;
+          min-height: 500px;
+          object-fit: cover;
+          object-position: center;
+      }
+      
+      .carousel-caption {
+          background: rgba(10, 0, 32, 0.7);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+          padding: 20px;
+          right: 10%;
+          left: 10%;
+          bottom: 50px;
+      }
+      
+      .btn-primary {
+          background: var(--gradient);
+          border: none;
+          padding: 12px 30px;
+          font-weight: 600;
+          border-radius: 50px;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(110, 0, 255, 0.4);
+      }
+      
+      .btn-primary:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(110, 0, 255, 0.6);
+      }
+      
+      /* Галерея изображений */
+      .holder-image {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 25px;
+          margin: 50px auto;
+          max-width: 1200px;
+          padding: 0 20px;
+      }
+      
+      .custom-img, .custom-img1 {
+          border-radius: 15px;
+          transition: all 0.4s ease;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          filter: brightness(0.9);
+      }
+      
+      .custom-img:hover, .custom-img1:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+          filter: brightness(1);
+      }
+      
+      /* Основной контент */
+      .text123 {
+          text-align: center;
+          padding: 80px 20px;
+          font-size: 2rem;
+          font-weight: 700;
+          background: linear-gradient(to right, var(--primary), var(--secondary));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+      
+      /* Подвал */
+      footer {
+          background: linear-gradient(to bottom, rgba(10, 0, 32, 0), rgba(10, 0, 32, 1));
+          padding: 60px 0 30px;
+          margin-top: auto;
+      }
+      
+      .footer-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+      
+      .footer-links h5 {
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+          background: var(--gradient);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+      
+      .footer-links a {
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: block;
+          margin-bottom: 10px;
+      }
+      
+      .footer-links a:hover {
+          color: var(--secondary);
+          transform: translateX(5px);
+      }
+      
+      /* Анимации */
+      @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+      }
+      
+      .floating {
+          animation: float 6s ease-in-out infinite;
+      }
+      
+      /* Адаптивность */
+      @media (max-width: 768px) {
+          .holder-image {
+              grid-template-columns: 1fr;
+          }
+          
+          .carousel-item img {
+              height: 50vh;
+              min-height: 300px;
+          }
+          
+          .text123 {
+              font-size: 1.5rem;
+              padding: 50px 20px;
+          }
+          
+          .navbar-collapse {
+              background: rgba(10, 0, 32, 0.9);
+              padding: 20px;
+              border-radius: 10px;
+              margin-top: 10px;
+          }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="page-container">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand" href="home">Hoku</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-button" aria-current="page" href="home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-button" href="{{ url_for('dashboard')}}">Админ-панель</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  {% if username %}
+                      <li class="nav-item"><span class="nav-link">{{ username }}</span></li>
+                      <li class="nav-item"><a class="nav-button" href="{{ url_for('logout') }}">Выход</a></li>
+                  {% else %}
+                      <li class="nav-item"><a class="nav-button signup-button" href="{{ url_for('auth') }}">Авторизация</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    
+    <main>
+        <div class="carousel-all floating">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="static/zerotwo.jpg" class="d-block w-100" alt="Zero Two">
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="invite" class="btn btn-primary">Вступить</a>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="static/raiden.jpg" class="d-block w-100" alt="Raiden">
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="shop" class="btn btn-primary">За покупками</a>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/tokyozerotwo.jpg" class="d-block w-100" alt="Tokyo Zero Two">
+                    <div class="carousel-caption d-none d-md-block">
+                        <a href="helpers" class="btn btn-primary">Подать заявку</a>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div class="holder-image">
+                <a href="skinchanger" class="floating" style="animation-delay: 0.2s;">
+                    <img src="static/tokyozerotwo.jpg" alt="Skin Changer" class="img-fluid custom-img">
+                </a>
+                <a href="shop" class="floating" style="animation-delay: 0.4s;">
+                    <img src="static/zerotwoglass.gif" alt="Shop" class="img-fluid custom-img1">
+                </a>
+            </div>
+        </div>
+        <div class="text123">
+          <p>Hello World!</p>
+        </div>
+    </main>
+        
+    <footer>
+      <div class="footer-container">
+          <div class="row">
+              <div class="col-md-4 mb-5">
+                  <h5>Hoku</h5>
+                  <p>Ваш лучший источник для всех товаров и услуг.</p>
+              </div>
+              <div class="col-md-4 footer-links mb-5">
+                  <h5>Навигация</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="home">Главная</a></li>
+                      <li><a href="auth">Авторизация</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4 footer-links mb-5">
+                  <h5>Контакты</h5>
+                  <ul class="list-unstyled">
+                      <li><i class="fas fa-envelope me-2"></i> info@hoku.com</li>
+                      <li><i class="fas fa-phone me-2"></i> +7 (123) 456-78-90</li>
+                      <li><i class="fas fa-map-marker-alt me-2"></i> Москва, ул. Примерная, 123</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="text-center mt-4 pt-4 border-top border-secondary">
+              <p>&copy; 2024 Hoku. Все права защищены.</p>
+          </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
