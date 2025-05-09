@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать новый заказ</title>
+</head>
+<body>
+    <h1>Создать новый заказ</h1>
+    <form method="POST">
+        <label for="table_number">Номер стола:</label>
+        <input type="number" id="table_number" name="table_number" required>
+
+        <label for="customer_count">Количество клиентов:</label>
+        <input type="number" id="customer_count" name="customer_count" required>
+
+        <label for="items">Заказанные блюда и напитки (через запятую):</label>
+        <input type="text" id="items" name="items" required>
+
+        <button type="submit">Создать заказ</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель админа | Cafe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+        }
+        
+        .sidebar {
+            background-color: var(--primary-color);
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+        }
+        
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+        
+        .sidebar .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .sidebar .nav-link.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .sidebar .nav-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            padding: 15px 20px;
+        }
+        
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .table thead th {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+        }
+        
+        .table tbody tr {
+            transition: background-color 0.2s;
+        }
+        
+        .table tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        
+        .table tbody td {
+            vertical-align: middle;
+            padding: 12px 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .btn-action {
+            padding: 5px 10px;
+            font-size: 0.85rem;
+            border-radius: 5px;
+        }
+        
+        .btn-terminate {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+        }
+        
+        .btn-terminate:hover {
+            background-color: #c0392b;
+            color: white;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .status-active {
+            background-color: rgba(39, 174, 96, 0.1);
+            color: var(--success-color);
+        }
+        
+        .status-inactive {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 20px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .page-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Сайдбар -->
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 250px;">
+            <a href="{{ url_for('home') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-4">Ресторан</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="{{ url_for('admin_dashboard') }}" class="nav-link active">
+                        <i class="fas fa-users"></i> Персонал
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('schedule_shift') }}" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i> Смены
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('all_orders') }}" class="nav-link">
+                        <i class="fas fa-utensils"></i> Заказы
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('add_employees') }}" class="nav-link active">
+                        <i class="fas fa-user-plus"></i> Регистрация
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user-avatar me-2">АД</div>
+                    <strong>Администратор</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">-</a></li>
+                    <li><a class="dropdown-item" href="#">-</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ url_for('logout') }}">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Основное содержимое -->
+        <div class="main-content flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="page-title">Административная панель</h1>
+                <div>
+                    <span class="me-2">Сегодня: <strong>{{ current_date }}</strong></span>
+                </div>
+            </div>
+
+            <!-- Список пользователей -->
+            <h2 class="section-title">Список пользователей</h2>
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Все сотрудники</span>
+                    <a href="{{ url_for('schedule_shift') }}" class="btn btn-primary-custom">
+                        <i class="fas fa-plus me-1"></i> Назначить смену
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Имя пользователя</th>
+                                    <th>Должность</th>
+                                    <th>Статус</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>
+                                        <strong>{{ user.username }}</strong>
+                                    </td>
+                                    <td>
+                                        {% if user.role == 'Admin' %}
+                                        <span class="badge bg-primary ms-2">Админ</span>
+                                        {% endif %}
+                                        {% if user.role == 'Waiter' %}
+                                        <span class="badge bg-danger ms-2">Официант</span>
+                                        {% endif %}
+                                        {% if user.role == 'Cook' %}
+                                        <span class="badge bg-warning ms-2">Повар</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <span class="status-badge {% if user.status == 'Активен' %}status-active{% else %}status-inactive{% endif %}">
+                                            {{ user.status }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {% if user.status == 'Активен' %}
+                                        <form action="{{ url_for('terminate_user', user_id=user.id) }}" method="POST" class="d-inline">
+                                            <button type="submit" class="btn btn-action btn-terminate">
+                                                <i class="fas fa-user-times me-1"></i> Уволить
+                                            </button>
+                                        </form>
+                                        {% endif %}
+                                        <a href="#" class="btn btn-action btn-secondary">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Назначенные смены -->
+            <h2 class="section-title">Назначенные смены</h2>
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Ближайшие смены</span>
+                    <a href="{{ url_for('view_orders') }}" class="btn btn-primary-custom">
+                        <i class="fas fa-list me-1"></i> Все заказы
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Время</th>
+                                    <th>Официанты</th>
+                                    <th>Повар</th>
+                                    <th>Статус</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for shift in shifts %}
+                                <tr>
+                                    <td>{{ shift.date }}</td>
+                                    <td>{{ shift.time }}</td>
+                                    <td>
+                                        {% for waiter in shift.waiters.split(',') %}
+                                        <span class="badge bg-danger text-light me-1">{{ waiter }}</span>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-warning text-light">{{ shift.cook }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">Запланирована</span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Активация всплывающих подсказок
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
+</body>
+</html>

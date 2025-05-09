@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация | Hoku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6e00ff;
+            --primary-dark: #4a00b4;
+            --secondary: #00f0ff;
+            --dark: #0a0020;
+            --darker: #050022;
+            --light: #f0f0ff;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .auth-container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .auth-card {
+            background: rgba(5, 0, 34, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .auth-header {
+            background: var(--gradient);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .auth-title {
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--light), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .auth-body {
+            padding: 30px;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: var(--light);
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            padding: 12px 15px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--secondary);
+            color: var(--light);
+            box-shadow: 0 0 0 0.25rem rgba(0, 240, 255, 0.25);
+        }
+        
+        .btn-auth {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .btn-auth:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(110, 0, 255, 0.6);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            padding: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        .auth-footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .auth-footer a:hover {
+            color: var(--light);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 576px) {
+            .auth-container {
+                padding: 0 15px;
+            }
+            
+            .auth-body {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">Hoku</h1>
+            </div>
+            <div class="auth-body">
+                <h2 class="text-center mb-4" style="color: var(--light);">Авторизация</h2>
+                <form method="POST">
+                    <div class="mb-4">
+                        <label for="username" class="form-label">Имя пользователя</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-auth">
+                        <i class="fas fa-sign-in-alt me-2"></i> Войти
+                    </button>
+                </form>
+            </div>
+            <div class="auth-footer">
+                Нет аккаунта? <a href="#">Зарегистрируйтесь</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

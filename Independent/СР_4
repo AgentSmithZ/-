@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+//СР_4, 14 Вариант.
+int tickets()
+{
+	int sum = 0;
+	int i, j, k;
+	char bilet[6];
+	
+	for (i = 0; i <= 9999999; i++) //Цикл
+	{ 
+		for (k = i, j = 0; j < 6; j++, k /= 10) 
+		{
+			bilet[j] = k % 10;
+		}
+		
+		if (bilet[0]+bilet[2]+bilet[4] == bilet[1]+bilet[3]+bilet[5]) //Вычисление "Счастливых" билетов
+		{ //
+			++sum;
+		}
+	}
+	return sum;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int k = tickets();
+	cout << "Количество счастливых билетов: " << k << endl; //Результат k
+	return 0;
+}

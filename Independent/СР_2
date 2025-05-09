@@ -1,0 +1,15 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+//СР_2, 14 Вариант.
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	float x, y;
+	cout<<"Введите значение x: "; cin>>x; 
+	y=pow(2,(-x)) - cos(x) + sin(2*x*y); //Уравнение по варианту.
+	cout<<y;
+	
+	return 0;
+}
