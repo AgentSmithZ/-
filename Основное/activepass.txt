@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+
+class PasswordCheck {
+private:
+    int attempts;
+    int maxAttempts;
+    std::string correctPassword; // Использование std::string
+
+public:
+    PasswordCheck(const std::string& password, int maxAttempts) : correctPassword(password), maxAttempts(maxAttempts), attempts(0) {}
+
+    bool CheckPass(const std::string& inputPassword) {
+        if (inputPassword.length() != correctPassword.length()) { // Проверка длины пароля
+            return false;
+        }
+        for (size_t i = 0; i < correctPassword.length(); ++i) {
+            if (correctPassword[i] != inputPassword[i]) {
+                return false;
+            }
+        }
+        return true; // Если все символы совпали
+    }
+
+    void run() {
+        while (attempts < maxAttempts) {
+            std::string inputPassword; // Объявление inputPassword
+            std::cout << "Введите пароль для входа в систему: ";
+            std::cin >> inputPassword;
+
+            if (CheckPass(inputPassword)) {
+                std::cout << "Пароль верный! Вы успешно вошли в систему!\n";
+                return;
+            }
+            else {
+                std::cout << "Пароль неверный! Попробуйте ещё одну попытку!\n";
+                attempts++;
+            }
+        }
+        std::cout << "Вы превысили допустимое число попыток! До свидания!\n";
+    }
+};
+
+int main() {
+    std::string correctPassword = "1234";
+    const int maxAttempts = 3;
+
+    PasswordCheck passwordCheck(correctPassword, maxAttempts);
+    passwordCheck.run();
+
+    return 0;
+}
