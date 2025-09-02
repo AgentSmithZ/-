@@ -1,0 +1,26 @@
+﻿1CV8LOG(ver 2.0)
+57afe644-53c4-46fa-82dc-5c8b2002cb5f
+
+{1,071523a4-516f-4fce-ba4b-0d11ab7a1893,"",1},
+{2,"PY-ND-5462",1},
+{3,"Designer",1},
+{4,"_$Session$_.Authentication",1},
+{13,1,1},
+{4,"_$Session$_.Start",2},
+{4,"_$InfoBase$_.ConfigUpdate",3},
+{4,"_$InfoBase$_.DBConfigUpdateStart",4},
+{4,"_$InfoBase$_.PredefinedDataUpdate",5},
+{5,7c970831-55a8-4e0a-b845-f46598403f33,"",1},
+{4,"_$InfoBase$_.DBConfigUpdate",6},
+{4,"_$Access$_.Access",7},
+{3,"1CV8C",2},
+{4,"_$Transaction$_.Begin",8},
+{4,"_$Data$_.New",9},
+{5,7c970831-55a8-4e0a-b845-f46598403f33,"Справочник.Сотрудники",1},
+{4,"_$Transaction$_.Commit",10},
+{3,"BackgroundJob",3},
+{4,"_$Session$_.Finish",11},
+{5,ca9560b9-2ccc-48e8-9f89-0cdb1c6918c2,"",2},
+{5,ca9560b9-2ccc-48e8-9f89-0cdb1c6918c2,"Справочник.Дети",2},
+{4,"_$Data$_.Update",12},
+{5,624131cb-1bbe-4ac1-a5bf-51c88cfc4fc7,"РегистрСведений.ОкладыСотрудников",3}
