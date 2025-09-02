@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main() {
+    float x;
+    float meters;
+    std::cin >> x;
+    std::cout << "Число в метрах ";
+    meters = x / 100;
+    std::cout << meters;
+
+    return 0;
+}
