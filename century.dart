@@ -3,11 +3,10 @@ void main() {
 
   for(final year in years) {
     final century = calculateCentury(year);
-    print(century); // вывод результата
+    print(century);
   }
 }
 
-// Функция расчета века по заданному году
 int calculateCentury(final int year) {
   return ((year - 1) ~/ 100) + 1;
 }
