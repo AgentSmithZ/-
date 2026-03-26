@@ -1,0 +1,36 @@
+#include <iostream>
+
+class TrainTransport {
+private:
+    int totalSeats;
+    int seatsInCoupe;
+    
+public:
+    TrainTransport(int totalSeats, int seatsInCoupe)
+    : totalSeats(totalSeats), seatsInCoupe(seatsInCoupe) {}
+    
+    int getCoupeNumber(int seatNumber) {
+        if (seatNumber < 1 || seatNumber > totalSeats) {
+            std::cerr << "Ошибка: номер места должен быть от 1 до 51" << totalSeats << std::endl;
+        }
+        return (seatNumber - 1) / seatsInCoupe + 1;
+    }
+};
+
+int main() {
+    const int totalSeats = 51;
+    const int seatsInCoupe = 4;
+    
+    TrainTransport trainTransport(totalSeats, seatsInCoupe);
+    
+    int seatNumber;
+    std::cout << "Введите номер места (от 1 до 51" << totalSeats << "):";
+    std::cin >> seatNumber;
+    
+    int coupeNumber = trainTransport.getCoupeNumber(seatNumber);
+    
+    if(coupeNumber != 1) {
+        std::cout << "Номер купе для места " << seatNumber << ":" << coupeNumber << std::endl;
+    }
+    return 0;
+}

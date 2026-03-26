@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.1.3">
+  <diagram name="Страница — 1" id="Pyo6bs4BAs30nssVcpol">
+    <mxGraphModel dx="1737" dy="955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-3" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="x8Y1YZj3rpBzzoGzAOU2-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="440" as="sourcePoint" />
+            <mxPoint x="280" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-4" value="План полётов" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="x8Y1YZj3rpBzzoGzAOU2-3">
+          <mxGeometry x="-0.4401" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-6" target="x8Y1YZj3rpBzzoGzAOU2-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="440" />
+              <mxPoint x="430" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-6" value="Получение данных о маршрутах, анализ, составление отчёта" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-8" target="x8Y1YZj3rpBzzoGzAOU2-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="530" />
+              <mxPoint x="620" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-8" value="Отправка запроса метеостанции о температуре, направление ветра" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.017;entryY=0.639;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="x8Y1YZj3rpBzzoGzAOU2-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="540" as="sourcePoint" />
+            <mxPoint x="350" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-10" value="Погода" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="x8Y1YZj3rpBzzoGzAOU2-9">
+          <mxGeometry x="-0.7663" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-13" target="x8Y1YZj3rpBzzoGzAOU2-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-13" value="Из полученных данных составление отчёта о разрешении полётов" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="190" as="sourcePoint" />
+            <mxPoint x="378.05" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="340" />
+              <mxPoint x="378" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-15" value="Регламенты&lt;br&gt;и стандарты" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="x8Y1YZj3rpBzzoGzAOU2-14">
+          <mxGeometry x="-0.7371" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="x8Y1YZj3rpBzzoGzAOU2-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="340" as="sourcePoint" />
+            <mxPoint x="378" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="340" />
+              <mxPoint x="460" y="340" />
+              <mxPoint x="460" y="410" />
+              <mxPoint x="530" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="1190" as="sourcePoint" />
+            <mxPoint x="530.05" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="610" y="870" />
+              <mxPoint x="610" y="715" />
+              <mxPoint x="530" y="715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-18" value="Информационные&lt;div&gt;системы&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="x8Y1YZj3rpBzzoGzAOU2-17">
+          <mxGeometry x="-0.7616" y="1" relative="1" as="geometry">
+            <mxPoint y="64" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-20" target="x8Y1YZj3rpBzzoGzAOU2-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-20" value="Получение данных из метеостанции и составление отчёта" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="707" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="x8Y1YZj3rpBzzoGzAOU2-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="880" as="sourcePoint" />
+            <mxPoint x="1050" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-30" value="Запросы от авиакомпаний" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="x8Y1YZj3rpBzzoGzAOU2-21">
+          <mxGeometry x="-0.8481" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-22" target="x8Y1YZj3rpBzzoGzAOU2-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="880" />
+              <mxPoint x="1210" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-22" value="Получение запросов от авиакомпаний составление отчёта" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-24" target="x8Y1YZj3rpBzzoGzAOU2-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1410" y="1000" />
+              <mxPoint x="1410" y="1120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-24" value="Отправка договоров авиакомпаниям и ожидание ответа" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="970" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="x8Y1YZj3rpBzzoGzAOU2-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1761.88232421875" y="1120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-29" value="Отчётность операций" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="x8Y1YZj3rpBzzoGzAOU2-28">
+          <mxGeometry x="0.2871" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8Y1YZj3rpBzzoGzAOU2-26" value="Создание отчёта о согласных авиакомпаниях" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="1090" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

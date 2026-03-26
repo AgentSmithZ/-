@@ -1,0 +1,184 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.1.3">
+  <diagram name="Страница — 1" id="5K0piHpOH7hdZP2fAs9e">
+    <mxGraphModel dx="1042" dy="573" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-1" value="Управление Аэропортом" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="290" y="360" width="270" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-8" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="420" as="sourcePoint" />
+            <mxPoint x="290" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-13" value="План полётов" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-8" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-14" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="450" as="sourcePoint" />
+            <mxPoint x="290" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-15" value="Погода" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-16" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="480" as="sourcePoint" />
+            <mxPoint x="290" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-17" value="Запросы от авиакомпаний" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-16" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint x="4" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-18" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="510" as="sourcePoint" />
+            <mxPoint x="290" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-19" value="Дополнительная информация" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-18" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-20" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="540" as="sourcePoint" />
+            <mxPoint x="290" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-21" value="Данные о состоянии оборудования" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-20" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-22" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="430" as="sourcePoint" />
+            <mxPoint x="700" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-23" value="Расписание рейсов" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-22" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-24" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="460" as="sourcePoint" />
+            <mxPoint x="700" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-25" value="Отчётность операций" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-24" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-26" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="494.67" as="sourcePoint" />
+            <mxPoint x="700" y="494.67" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-27" value="Отчёт о воздушном судне" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-26" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-28" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="525" as="sourcePoint" />
+            <mxPoint x="700" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-29" value="Финансовые отчёты" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-28" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-30" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="740" as="sourcePoint" />
+            <mxPoint x="360" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-33" value="Персонал" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-30" vertex="1" connectable="0">
+          <mxGeometry x="0.297" y="2" relative="1" as="geometry">
+            <mxPoint y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-31" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424.67" y="740" as="sourcePoint" />
+            <mxPoint x="424.67" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-34" value="Информационные&lt;br&gt;системы" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-31" vertex="1" connectable="0">
+          <mxGeometry x="-0.0182" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-32" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="740" as="sourcePoint" />
+            <mxPoint x="490" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-35" value="Оборудование" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="pL-mmkb_IUGAhLksb8QW-32" vertex="1" connectable="0">
+          <mxGeometry x="-0.5636" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="pL-mmkb_IUGAhLksb8QW-36" target="pL-mmkb_IUGAhLksb8QW-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-36" value="Воздействия" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="380" y="190" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.323;entryY=0.007;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pL-mmkb_IUGAhLksb8QW-36" target="pL-mmkb_IUGAhLksb8QW-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.669;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pL-mmkb_IUGAhLksb8QW-36" target="pL-mmkb_IUGAhLksb8QW-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-40" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="290" as="sourcePoint" />
+            <mxPoint x="380" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-41" value="Регламенты&lt;br&gt;и стандарты" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="135" y="253" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-42" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="220" as="sourcePoint" />
+            <mxPoint x="425" y="316" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-43" value="Политика&lt;br&gt;безопасности" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="200" y="183" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-44" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="313" as="sourcePoint" />
+            <mxPoint x="574" y="239" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pL-mmkb_IUGAhLksb8QW-45" value="Инструкции" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="538" y="214" width="83" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
