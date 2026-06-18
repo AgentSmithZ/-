@@ -1,0 +1,14 @@
+void User(String name, int age, String api, String deviceinfo) {
+    print('ФИО: $name');
+    print('Возраст: $age');
+    print('API: $api');
+    print('Тип устройства: $deviceinfo');
+}
+
+void main() {
+    User('ПДЕ', 20, 'v1.0', 'Android');
+    print('-----------------');
+    User('ИЛР', 19, 'v2.0', 'IPhone');
+    print('-----------------');
+    User('ГАР', 19, 'v2.0', 'Android');
+}
